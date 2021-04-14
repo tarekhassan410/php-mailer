@@ -52,9 +52,12 @@
                 </div>
             </form>
             <?php
+
+            
                 if(isset($_POST['submit']))
                 {
-
+                    ini_set("SMTP", "aspmx.l.google.com");
+                    ini_set("sendmail_from", $_POST["sender_email"]);
                     $subject = $_POST['subject'];
                     
                     $message =  $_POST['message'];
